@@ -1,0 +1,12 @@
+base_controller:
+  type: "robot_controllers/DiffDriveBaseController"
+  max_velocity_x: 1.0
+  max_acceleration_x: 0.75
+  moving_threshold: -0.01
+  rotating_threshold: -0.01
+  autostart: true
+  laser_safety_dist: 1.0
+
+robot_driver:
+  default_controllers:
+    - "base_controller"
