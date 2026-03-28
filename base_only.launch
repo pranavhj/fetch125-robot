@@ -48,8 +48,11 @@
     <param name="initial_topic" value="/cmd_vel" />
   </node>
 
-  <!-- Auto Dock / Undock -->
-  <node name="auto_dock" pkg="fetch_open_auto_dock" type="auto_dock" output="log" />
+  <!-- Auto Dock / Undock (built from source with configurable velocity) -->
+  <node name="auto_dock" pkg="fetch_open_auto_dock" type="auto_dock" output="log">
+    <param name="dock_linear_velocity" value="0.8" />
+    <param name="dock_min_velocity" value="0.5" />
+  </node>
 
   <!-- Diagnostics Aggregator -->
   <include file="$(find fetch_bringup)/launch/include/aggregator.launch.xml" />
